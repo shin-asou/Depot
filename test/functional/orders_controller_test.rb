@@ -1,3 +1,4 @@
+# encoding:utf-8
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
@@ -14,7 +15,7 @@ class OrdersControllerTest < ActionController::TestCase
   test "should get new" do
     cart = Cart.create
     LineItem.create(cart: cart, product: products(:ruby))
-    get :new {}, {cart_id: cart.id}
+    get :new, {}, {cart_id: cart.id}
     assert_response :success
   end
 

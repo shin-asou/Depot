@@ -10,7 +10,7 @@ class OrderNotifierTest < ActionMailer::TestCase
   end
 
   test "shipped" do
-    mail = OrderNotifier.shipped
+    mail = OrderNotifier.shipped(orders(:one))
     assert_equal "Pragmatic Store Order Shipped", mail.subject
     assert_equal ["dave@example.org"], mail.to
     assert_equal ["shin.asou0120@gmail.com"], mail.from

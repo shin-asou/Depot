@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
 	validates :title, uniqueness: true
 	validates :image_url, allow_blank: true, format: {
 		with: 	 %r{\.(gif|jpg|png)$}i,
-		message: 'はGIF、JPG、PNG画像のURLでなければなりません' 
+		message: 'はGIF、JPG、PNG画像のURLでなければなりません'
 	}
 
   private
